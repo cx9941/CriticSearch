@@ -199,6 +199,77 @@ Either nothing, or one feedback line.
     return feedback
 
 
+def user_simulate_prompt_inter_feedback(ip, temperature, think_content, problem, ground_truth, inter_threshold=0.7):
+    """
+    模拟用户是否选择中断模型推理。
+    当模型出现明显错误、无意义循环、或偏离题意时，用户可能中断推理。
+    返回：
+        "<user> interrupt </user>" 表示应中断；
+        "<user> continue </user>" 表示继续推理。
+    """
+    prob = random.random()
+
+    # 高于阈值 => 触发中断评估
+    if prob > inter_threshold:
+        prompt = f"""You are a simulated interactive user monitoring the model’s reasoning process.
+
+The question is: "{problem}"
+The model's current reasoning is:
+<think>
+{think_content}
+</think>
+
+You are observing the reasoning in real time.
+You should decide whether to INTERRUPT the reasoning based on the following intuition:
+
+Interrupt the reasoning if:
+- It is obviously wrong or nonsensical,
+- It goes in circles without progress,
+- It contradicts the question,
+- It drifts away from the topic.
+
+Otherwise, let the model continue.
+
+Examples:
+<think> The answer must be 2+2=5 because... </think>
+<user> interrupt </user>
+
+<think> The capital of France is Paris. Therefore... </think>
+<user> continue </user>
+
+Output exactly one of the following tags:
+<user> interrupt </user>
+or
+<user> continue </user>
+"""
+    else:
+        # 多数情况保持继续
+        prompt = f"""You are a simulated user monitoring the reasoning of a model for the question:
+"{problem}"
+
+You will decide whether the reasoning should be interrupted.
+If it seems reasonable, coherent, or still progressing logically, choose continue.
+If it seems nonsense, repetitive, or stuck, choose interrupt.
+
+<think>
+{think_content}
+</think>
+
+Output exactly one of:
+<user> interrupt </user>
+<user> continue </user>
+"""
+
+    feedback = ask_llm(ip, prompt, temperature).strip()
+    feedback = feedback.replace('\n\n', '\n').strip()
+
+    # 保证输出标准化
+    if "<user> interrupt </user>" in feedback.lower():
+        return "<user> interrupt </user>"
+    else:
+        return "<user> continue </user>"
+
+
 class UserLLMGenerationManager:
     def __init__(
         self,
@@ -569,12 +640,34 @@ class UserLLMGenerationManager:
         next_obs, dones, valid_action, is_user = [], [], [], []
         user_queries = [content for action, content in zip(cur_actions, contents) if action == 'user']
 
-        if do_user:
-            user_results = self.batch_user(user_queries, problem, ground_truth, user_mode, gt_threshold)
-            assert len(user_results) == sum([1 for action in cur_actions if action == 'user'])
+        if do_user and user_queries:
+            # Step 3: 批量判断这些样本是否需要中断
+            user_inters = self.batch_user(
+                user_queries, problem, ground_truth, 'simulate_prompt_inter', gt_threshold
+            )
+
+            # Step 4: 根据 user_inters 的结果更新 cur_actions
+            inter_ptr = 0
+            for i, action in enumerate(cur_actions):
+                if action == 'user':
+                    feedback = user_inters[inter_ptr].strip().lower()
+                    inter_ptr += 1
+                    if "<user> interrupt </user>" in feedback:
+                        cur_actions[i] = "user"
+
+            # Step 5: 再次筛选未中断的样本（继续进入 user_mode）
+            user_queries_active = [contents[i] for i, a in enumerate(cur_actions) if a == "user"]
+
+            if user_queries_active:
+                user_results = self.batch_user(
+                    user_queries_active, problem, ground_truth, user_mode, gt_threshold
+                )
+                assert len(user_results) == len(user_queries_active)
+            else:
+                user_results = []
+
         else:
-            # user_feedback = [''] * sum([1 for _ in predictions])
-            user_results = [''] * sum([1 for action in cur_actions if action == 'search'])
+            user_inters, user_results = [], []
 
         # print("user_results", user_results)
 
@@ -668,6 +761,8 @@ class UserLLMGenerationManager:
 
         return all_user_result
 
+
+
     def user_from_wiki(self, ip, query, topk=5):
         for _ in range(10):
             try:
@@ -723,6 +818,8 @@ class UserLLMGenerationManager:
             doc_texts = user_simulate_sft_feedback(self.config.llm_ip, self.config.temperature, prediction, problem, ground_truth, gt_threshold)
         elif user_mode == 'simulate_prompt':
             doc_texts = user_simulate_prompt_feedback(self.config.llm_ip, self.config.temperature, prediction, problem, ground_truth, gt_threshold)
+        elif user_mode == 'simulate_prompt_inter':
+            doc_texts = user_simulate_prompt_inter_feedback(self.config.llm_ip, self.config.temperature, prediction, problem, ground_truth, gt_threshold)
         # print(doc_texts)
         return doc_texts, index
 

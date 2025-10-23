@@ -10,3 +10,5 @@ verl.egg-info
 __pycache__
 llm_server
 *tmp*
+wandb
+logs
