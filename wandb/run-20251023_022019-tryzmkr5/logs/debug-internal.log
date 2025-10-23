@@ -1,6 +1,0 @@
-{"time":"2025-10-23T02:20:20.212673925Z","level":"INFO","msg":"stream: starting","core version":"0.22.2"}
-{"time":"2025-10-23T02:20:20.61765311Z","level":"INFO","msg":"stream: created new stream","id":"tryzmkr5"}
-{"time":"2025-10-23T02:20:20.617728159Z","level":"INFO","msg":"handler: started","stream_id":"tryzmkr5"}
-{"time":"2025-10-23T02:20:20.617830366Z","level":"INFO","msg":"stream: started","id":"tryzmkr5"}
-{"time":"2025-10-23T02:20:20.617852121Z","level":"INFO","msg":"writer: started","stream_id":"tryzmkr5"}
-{"time":"2025-10-23T02:20:20.617864309Z","level":"INFO","msg":"sender: started","stream_id":"tryzmkr5"}
