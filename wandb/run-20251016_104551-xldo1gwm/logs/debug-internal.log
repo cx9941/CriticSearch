@@ -1,0 +1,6 @@
+{"time":"2025-10-16T10:45:52.293370756Z","level":"INFO","msg":"stream: starting","core version":"0.22.2"}
+{"time":"2025-10-16T10:45:52.742674785Z","level":"INFO","msg":"stream: created new stream","id":"xldo1gwm"}
+{"time":"2025-10-16T10:45:52.742742271Z","level":"INFO","msg":"handler: started","stream_id":"xldo1gwm"}
+{"time":"2025-10-16T10:45:52.742842649Z","level":"INFO","msg":"stream: started","id":"xldo1gwm"}
+{"time":"2025-10-16T10:45:52.742861282Z","level":"INFO","msg":"writer: started","stream_id":"xldo1gwm"}
+{"time":"2025-10-16T10:45:52.742867281Z","level":"INFO","msg":"sender: started","stream_id":"xldo1gwm"}

@@ -1,0 +1,363 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+[36m(pid=2012588)[0m /ssd/chenxi/miniconda3/envs/criticsearch/lib/python3.9/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+[36m(pid=2012588)[0m No module named 'vllm._version'
+[36m(pid=2012588)[0m   from vllm.version import __version__ as VLLM_VERSION
+[36m(pid=2012952)[0m /ssd/chenxi/miniconda3/envs/criticsearch/lib/python3.9/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+[36m(pid=2012952)[0m No module named 'vllm._version'
+[36m(pid=2012952)[0m   from vllm.version import __version__ as VLLM_VERSION
+[36m(WorkerDict pid=2012588)[0m Model config after override: Qwen2Config {
+[36m(WorkerDict pid=2012588)[0m   "_name_or_path": "models/Qwen/Qwen2.5-0.5B-Instruct",
+[36m(WorkerDict pid=2012588)[0m   "architectures": [
+[36m(WorkerDict pid=2012588)[0m     "Qwen2ForCausalLM"
+[36m(WorkerDict pid=2012588)[0m   ],
+[36m(WorkerDict pid=2012588)[0m   "attention_dropout": 0.0,
+[36m(WorkerDict pid=2012588)[0m   "eos_token_id": 151645,
+[36m(WorkerDict pid=2012588)[0m   "hidden_act": "silu",
+[36m(WorkerDict pid=2012588)[0m   "hidden_size": 896,
+[36m(WorkerDict pid=2012588)[0m   "initializer_range": 0.02,
+[36m(WorkerDict pid=2012588)[0m   "intermediate_size": 4864,
+[36m(WorkerDict pid=2012588)[0m   "max_position_embeddings": 32768,
+[36m(WorkerDict pid=2012588)[0m   "max_window_layers": 21,
+[36m(WorkerDict pid=2012588)[0m   "model_type": "qwen2",
+[36m(WorkerDict pid=2012588)[0m   "num_attention_heads": 14,
+[36m(WorkerDict pid=2012588)[0m   "num_hidden_layers": 24,
+[36m(WorkerDict pid=2012588)[0m   "num_key_value_heads": 2,
+[36m(WorkerDict pid=2012588)[0m   "pad_token_id": 151643,
+[36m(WorkerDict pid=2012588)[0m   "rms_norm_eps": 1e-06,
+[36m(WorkerDict pid=2012588)[0m   "rope_scaling": null,
+[36m(WorkerDict pid=2012588)[0m   "rope_theta": 1000000.0,
+[36m(WorkerDict pid=2012588)[0m   "sliding_window": null,
+[36m(WorkerDict pid=2012588)[0m   "tie_word_embeddings": true,
+[36m(WorkerDict pid=2012588)[0m   "torch_dtype": "bfloat16",
+[36m(WorkerDict pid=2012588)[0m   "transformers_version": "4.47.1",
+[36m(WorkerDict pid=2012588)[0m   "use_cache": true,
+[36m(WorkerDict pid=2012588)[0m   "use_sliding_window": false,
+[36m(WorkerDict pid=2012588)[0m   "vocab_size": 151936
+[36m(WorkerDict pid=2012588)[0m }
+[36m(WorkerDict pid=2012588)[0m
+[36m(WorkerDict pid=2012588)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+[36m(WorkerDict pid=2012588)[0m NCCL version 2.20.5+cuda12.4
+[36m(WorkerDict pid=2012588)[0m Qwen2ForCausalLM contains 494.03M parameters
+[36m(WorkerDict pid=2012588)[0m wrap_policy: functools.partial(<function _or_policy at 0x716331e7c5e0>, policies=[functools.partial(<function transformer_auto_wrap_policy at 0x716331e7c4c0>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>})])
+[36m(WorkerDict pid=2012588)[0m Actor use_remove_padding=True
+[36m(WorkerDict pid=2012588)[0m Model config after override: Qwen2Config {
+[36m(WorkerDict pid=2012588)[0m   "_name_or_path": "models/Qwen/Qwen2.5-0.5B-Instruct",
+[36m(WorkerDict pid=2012588)[0m   "architectures": [
+[36m(WorkerDict pid=2012588)[0m     "Qwen2ForCausalLM"
+[36m(WorkerDict pid=2012588)[0m   ],
+[36m(WorkerDict pid=2012588)[0m   "attention_dropout": 0.0,
+[36m(WorkerDict pid=2012588)[0m   "eos_token_id": 151645,
+[36m(WorkerDict pid=2012588)[0m   "hidden_act": "silu",
+[36m(WorkerDict pid=2012588)[0m   "hidden_size": 896,
+[36m(WorkerDict pid=2012588)[0m   "initializer_range": 0.02,
+[36m(WorkerDict pid=2012588)[0m   "intermediate_size": 4864,
+[36m(WorkerDict pid=2012588)[0m   "max_position_embeddings": 32768,
+[36m(WorkerDict pid=2012588)[0m   "max_window_layers": 21,
+[36m(WorkerDict pid=2012588)[0m   "model_type": "qwen2",
+[36m(WorkerDict pid=2012588)[0m   "num_attention_heads": 14,
+[36m(WorkerDict pid=2012588)[0m   "num_hidden_layers": 24,
+[36m(WorkerDict pid=2012588)[0m   "num_key_value_heads": 2,
+[36m(WorkerDict pid=2012588)[0m   "pad_token_id": 151643,
+[36m(WorkerDict pid=2012588)[0m   "rms_norm_eps": 1e-06,
+[36m(WorkerDict pid=2012588)[0m   "rope_scaling": null,
+[36m(WorkerDict pid=2012588)[0m   "rope_theta": 1000000.0,
+[36m(WorkerDict pid=2012588)[0m   "sliding_window": null,
+[36m(WorkerDict pid=2012588)[0m   "tie_word_embeddings": true,
+[36m(WorkerDict pid=2012588)[0m   "torch_dtype": "bfloat16",
+[36m(WorkerDict pid=2012588)[0m   "transformers_version": "4.47.1",
+[36m(WorkerDict pid=2012588)[0m   "use_cache": true,
+[36m(WorkerDict pid=2012588)[0m   "use_sliding_window": false,
+[36m(WorkerDict pid=2012588)[0m   "vocab_size": 151936
+[36m(WorkerDict pid=2012588)[0m }
+[36m(WorkerDict pid=2012588)[0m
+[36m(WorkerDict pid=2012588)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(WorkerDict pid=2012588)[0m Qwen2ForCausalLM contains 494.03M parameters
+[36m(WorkerDict pid=2012588)[0m Total steps: 203, num_warmup_steps: 192
+[36m(WorkerDict pid=2012588)[0m Before building vllm rollout, memory allocated (GB): 0.9205718040466309, memory reserved (GB): 0.958984375
+[36m(WorkerDict pid=2012952)[0m WARNING 10-22 08:30:19 config.py:380] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+[36m(WorkerDict pid=2012952)[0m wrap_policy: functools.partial(<function _or_policy at 0x7d40bfa7c5e0>, policies=[functools.partial(<function transformer_auto_wrap_policy at 0x7d40bfa7c4c0>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>})])[32m [repeated 3x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(WorkerDict pid=2012952)[0m Actor use_remove_padding=True[32m [repeated 3x across cluster][0m
+[36m(WorkerDict pid=2012952)[0m /ssd/chenxi/miniconda3/envs/criticsearch/lib/python3.9/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+[36m(WorkerDict pid=2012952)[0m   @torch.library.impl_abstract("xformers_flash::flash_fwd")
+[36m(WorkerDict pid=2012952)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+[36m(WorkerDict pid=2012952)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(WorkerDict pid=2012952)[0m local rank 0
+[36m(WorkerDict pid=2012952)[0m INFO 10-22 08:30:19 selector.py:115] Using XFormers backend.
+[36m(WorkerDict pid=2012952)[0m /ssd/chenxi/miniconda3/envs/criticsearch/lib/python3.9/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+[36m(WorkerDict pid=2012952)[0m   @torch.library.impl_abstract("xformers_flash::flash_bwd")
+[36m(WorkerDict pid=2012952)[0m Total steps: 203, num_warmup_steps: 192
+[36m(WorkerDict pid=2012952)[0m NCCL version 2.20.5+cuda12.4
+[36m(WorkerDict pid=2012588)[0m before init cache memory allocated: 1.99052032GB, reserved: 2.057306112GB
+[36m(WorkerDict pid=2012588)[0m after init cache memory allocated: 14.57343232GB, reserved: 14.640218112GB
+[36m(WorkerDict pid=2012588)[0m kwargs: {'n': 1, 'logprobs': 1, 'max_tokens': 500, 'detokenize': False, 'temperature': 1, 'top_k': -1, 'top_p': 0.95, 'ignore_eos': False}
+[36m(WorkerDict pid=2012588)[0m After building vllm rollout, memory allocated (GB): 12.651166439056396, memory reserved (GB): 13.634765625
+[36m(WorkerDict pid=2012588)[0m After building sharding manager, memory allocated (GB): 12.651166439056396, memory reserved (GB): 13.634765625
+[36m(WorkerDict pid=2012588)[0m WARNING 10-22 08:30:19 config.py:380] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+[36m(WorkerDict pid=2012588)[0m local rank 0
+[36m(WorkerDict pid=2012952)[0m INFO 10-22 08:30:20 selector.py:115] Using XFormers backend.[32m [repeated 3x across cluster][0m
+[36m(WorkerDict pid=2012588)[0m /ssd/chenxi/miniconda3/envs/criticsearch/lib/python3.9/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:689: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+[36m(WorkerDict pid=2012588)[0m   warnings.warn(
+[36m(WorkerDict pid=2012588)[0m /ssd/chenxi/miniconda3/envs/criticsearch/lib/python3.9/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.[32m [repeated 2x across cluster][0m
+[36m(WorkerDict pid=2012588)[0m   @torch.library.impl_abstract("xformers_flash::flash_fwd")
+[36m(WorkerDict pid=2012588)[0m   @torch.library.impl_abstract("xformers_flash::flash_bwd")
+Training:   0%|                                                                                                                                                         | 0/203 [00:00<?, ?it/s]
+epoch 0, step 1
+[2025-10-22 08:30:37,686][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,723][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,725][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,726][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,741][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,743][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,744][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,745][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:37,782][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,163][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,236][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,352][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,353][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,354][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,356][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,363][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,410][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,436][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,523][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,716][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,848][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,849][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,877][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,886][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,899][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:38,930][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,043][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,073][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,101][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,156][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,188][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,333][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,353][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,386][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,467][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,476][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,480][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,481][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,515][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:39,723][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,394][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,606][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,679][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,782][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,784][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,798][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,801][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,802][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,828][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,836][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:45,837][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,016][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,261][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,270][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,286][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,299][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,367][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,369][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,370][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,395][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,414][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,465][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,722][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,899][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,918][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,919][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,920][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:46,959][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,058][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,120][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,167][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,179][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,271][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,272][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,318][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,349][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,388][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,459][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,632][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:47,755][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:52,845][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,002][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,028][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,146][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,175][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,188][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,210][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,211][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,307][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,368][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,383][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,437][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,484][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,485][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,616][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,624][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,659][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,731][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,740][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,748][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,762][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,848][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:53,891][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,098][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,196][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,232][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,308][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,317][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,327][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,333][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,354][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,446][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,466][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,488][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,569][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,580][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,597][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,624][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,640][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:30:54,789][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,653][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,671][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,766][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,924][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,935][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,936][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,938][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,953][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,957][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,960][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:03,988][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,055][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,239][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,250][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,515][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,570][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,571][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,604][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,612][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,613][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,622][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,642][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,778][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,824][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,921][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:04,972][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,083][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,101][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,139][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,153][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,280][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,326][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,354][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,453][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,454][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,466][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,606][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,683][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,701][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:05,847][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,141][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,382][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,392][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,419][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,420][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,434][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,435][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,437][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,659][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,712][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,744][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,830][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,881][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,882][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,906][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,907][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:15,954][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,012][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,073][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,084][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,112][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,279][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,330][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,394][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,441][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,476][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,544][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,661][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,681][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,682][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,749][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,849][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,872][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,884][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,901][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,932][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,937][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:16,987][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:17,037][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:17,389][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:27,763][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:27,844][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:27,887][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:27,892][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:27,968][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:27,998][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,014][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,015][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,038][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,052][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,110][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,164][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,417][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,444][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,510][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,524][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,556][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,576][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,585][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,586][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,607][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,668][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,849][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,934][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,935][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,951][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,952][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,967][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:28,991][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,032][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,210][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,327][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,328][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,335][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,366][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,375][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,393][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,394][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,474][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-10-22 08:31:29,482][httpx][INFO] - HTTP Request: POST http://localhost:8000/v1/chat/completions "HTTP/1.1 200 OK"
+ACTIVE_TRAJ_NUM: [40, 40, 40, 40, 40, 40, 40]
+Interaction Turns Statistics:
+Finish at the 1-th turn: 0
+Finish at the 2-th turn: 0
+Finish at the 3-th turn: 0
+Finish at the 4-th turn: 0
+Finish at the 5-th turn: 0
+Finish at the 6-th turn: 40
+ACTIVE_TRAJ_NUM: [40, 39, 39, 39, 39, 39, 39]
+Interaction Turns Statistics:
+Finish at the 1-th turn: 1
+Finish at the 2-th turn: 0
+Finish at the 3-th turn: 0
+Finish at the 4-th turn: 0
+Finish at the 5-th turn: 0
+Finish at the 6-th turn: 39
+Error executing job with overrides: ['data.train_files=data/CriticSearch_dataset/train.parquet', 'data.val_files=data/CriticSearch_dataset/test.parquet', 'data.train_data_num=null', 'data.val_data_num=null', 'data.train_batch_size=8', 'data.val_batch_size=16', 'data.max_prompt_length=4096', 'data.max_response_length=500', 'data.max_start_length=2048', 'data.max_obs_length=2048', 'data.shuffle_train_dataloader=True', 'algorithm.adv_estimator=grpo', 'actor_rollout_ref.model.path=models/Qwen/Qwen2.5-0.5B-Instruct', 'actor_rollout_ref.model.enable_gradient_checkpointing=true', 'actor_rollout_ref.model.use_remove_padding=True', 'actor_rollout_ref.actor.optim.lr=1e-6', 'actor_rollout_ref.actor.optim.lr_warmup_steps_ratio=0.95', 'actor_rollout_ref.actor.use_kl_loss=true', 'actor_rollout_ref.actor.ppo_mini_batch_size=128', 'actor_rollout_ref.actor.ppo_micro_batch_size=8', 'actor_rollout_ref.actor.fsdp_config.param_offload=true', 'actor_rollout_ref.actor.fsdp_config.grad_offload=true', 'actor_rollout_ref.actor.fsdp_config.optimizer_offload=true', 'actor_rollout_ref.rollout.log_prob_micro_batch_size=128', 'actor_rollout_ref.rollout.tensor_model_parallel_size=1', 'actor_rollout_ref.rollout.name=vllm', 'actor_rollout_ref.rollout.gpu_memory_utilization=0.6', 'actor_rollout_ref.ref.log_prob_micro_batch_size=128', 'actor_rollout_ref.ref.fsdp_config.param_offload=True', 'actor_rollout_ref.actor.kl_loss_coef=0.001', 'actor_rollout_ref.actor.kl_loss_type=low_var_kl', 'algorithm.no_think_rl=false', 'actor_rollout_ref.rollout.n_agent=5', 'actor_rollout_ref.rollout.temperature=1', 'actor_rollout_ref.actor.state_masking=True', "trainer.logger=['wandb']", 'trainer.val_only=false', 'trainer.val_before_train=False', 'trainer.default_hdfs_dir=null', 'trainer.n_gpus_per_node=2', 'trainer.nnodes=1', 'trainer.save_freq=50', 'trainer.test_freq=300', 'trainer.project_name=ZeroSearch', 'trainer.experiment_name=Qwen2.5-0.5B-Instruct_GRPO_simulate_sft_Simulation_LLM_wiki_3B_0_0.5_wiki_turns_5', 'trainer.total_epochs=10', 'trainer.total_training_steps=203', 'trainer.default_hdfs_dir=null', 'trainer.default_local_dir=verl_checkpoints/Qwen2.5-0.5B-Instruct_GRPO_simulate_sft_Simulation_LLM_wiki_3B_0_0.5_wiki_turns_5', 'trainer.max_turns=5', 'trainer.reward_function=f1', 'trainer.do_search=True', 'retriever.start_threshold=0', 'retriever.end_threshold=0.5', 'retriever.llm_ip=localhost', 'retriever.search_mode=wiki', 'retriever.search_engine=wiki', 'retriever.topk=5', 'retriever.simulate_llm=models/iic/Simulation_LLM_google_3B']

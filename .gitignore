@@ -1,0 +1,12 @@
+*pyc
+.DS_Store
+.trash
+.vscode
+baselines
+data
+outputs
+verl_checkpoints
+verl.egg-info
+__pycache__
+llm_server
+*tmp*
